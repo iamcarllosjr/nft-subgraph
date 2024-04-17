@@ -2,7 +2,7 @@ specVersion: 1.0.0
 indexerHints:
   prune: auto
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Contract
@@ -22,7 +22,7 @@ dataSources:
         - Transfer
       abis:
         - name: Contract
-          file: ./abis/Contract.json
+          file: Contract\abis\Contract.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,indexed uint256)
           handler: handleApproval
@@ -32,17 +32,17 @@ dataSources:
           handler: handleOwnershipTransferred
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: ./src/contract.ts
+      file: Contract\Contract.wasm
 templates:
   - name: TokenMetadata
     kind: file/ipfs
     mapping:
-        apiVersion: 0.0.7
-        language: wasm/assemblyscript
-        file: ./src/contract.ts
-        handler: handleMetadata
-        entities:
-            - TokenMetadata
-        abis:
-            - name: Contract
-              file: ./abis/Contract.json
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      file: Contract\Contract.wasm
+      handler: handleMetadata
+      entities:
+        - TokenMetadata
+      abis:
+        - name: Contract
+          file: TokenMetadata\abis\Contract.json
