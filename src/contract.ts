@@ -17,7 +17,7 @@ import {
 import { TokenMetadata as TokenMetadataTemplate } from "../generated/templates";
 import { json, Bytes, dataSource, log } from "@graphprotocol/graph-ts";
 
-
+// Get CID on pinata = QmYmocsxt9z2tSUmH8qSEjtNQfvgUBfaR7dGeojhT68T2o
 const ipfsHash = "QmYmocsxt9z2tSUmH8qSEjtNQfvgUBfaR7dGeojhT68T2o";
 
 export function handleApproval(event: ApprovalEvent): void {

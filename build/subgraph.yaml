@@ -20,6 +20,8 @@ dataSources:
         - ApprovalForAll
         - OwnershipTransferred
         - Transfer
+        - Token
+        - Owner
       abis:
         - name: Contract
           file: Contract\abis\Contract.json
